@@ -10,10 +10,17 @@ Goal of this task is to create architecture as show on below diagram.
 4. Push image to **ECR**
 5. Create **ECS** and consume published image from ECR
 6. Open created service in Web browser
-7. Create **Terraform** which deploy our infrastructure
+7. Create **Terraform** which deploy infrastructure
 8. Glue everything using **AWS CodePipeline** to deploy infrastructure and our image from **GitHub**
 
-### Links
+### Assumptions
+- Use **eu-central-1**
+- Use "Default" VPC
+- Use "Default" subnet
+- As naming convention please use pattern [Username]-[service]. Ex. mg-repository, mg-pipeline, etc.
+- **Drop infrastructure after initial setup** it should be created by Terraform after that on-demand
+
+### Usefull links
 
 - Terraform - [https://registry.terraform.io/providers/hashicorp/aws/latest](https://registry.terraform.io/providers/hashicorp/aws/latest)
 - AWS ECS - [https://aws.amazon.com/ecs/getting-started/](https://aws.amazon.com/ecs/getting-started/)
