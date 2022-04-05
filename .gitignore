@@ -1,6 +1,11 @@
 # macOS files
 .DS_Store
 
-#Visual Studio files
+# Visual Studio files
 bin/
 obj/
+
+# Terraform
+.terraform/
+.terraform*
+*.tfstate*
