@@ -13,7 +13,8 @@ provider "aws" {
 }
 
 variable "vpc_id" {
-  type = string
+  type    = string
+  default = "vpc-0fead40e24304ce5f"
 }
 
 variable "user_prefix" {
@@ -70,8 +71,8 @@ resource "aws_ecs_task_definition" "service" {
   family                   = "${var.user_prefix}-definition"
   requires_compatibilities = ["FARGATE"]
   network_mode             = "awsvpc"
-  cpu                      = 10
-  memory                   = 512
+  cpu                      = 1024
+  memory                   = 2048
   execution_role_arn       = aws_iam_role.ecsTaskExecutionRole.arn
   task_role_arn            = aws_iam_role.ecsTaskExecutionRole.arn
 
